@@ -8,8 +8,6 @@ tuning. And the button never stays put: a small 2-servo SCARA arm slides it to
 a new random spot after every press, so the policy can't memorize one position
 and an eval can run unattended forever.
 
-*(photo coming soon)*
-
 ## Bill of materials
 
 | Qty | Part | Link | Notes |

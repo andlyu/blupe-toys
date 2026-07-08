@@ -7,13 +7,10 @@ Deformable-object grasping plus a placement above the table plane — and the
 rig resets *itself*: the shelf is hinged, so after every attempt a recorded
 flip motion tips the sock back onto the table.
 
-*(photo coming soon)*
-
 ## Parts
 
 | Part | Notes |
 |---|---|
-| 1× red sock | A rolled or balled sock, saturated red so it segments cleanly. Deformable = forgiving to grasp but hard to place tidily, which is the point. |
 | 1× small shelf on a hinge | A platform ~10–15 cm above the table at the front edge of the workspace, mounted so it can tip forward and dump its contents. Ours is flipped by the arm itself replaying a recorded motion; a hobby servo on the hinge works just as well. |
 
 Placement: shelf at the front of the workspace, sock starting anywhere on the

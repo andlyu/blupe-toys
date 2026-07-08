@@ -8,8 +8,6 @@ it, and release it into a tall black cylinder (the "cup"). It exercises the
 full pick-and-place loop: visual search, a precise grasp on a curved object,
 and a placement that only counts when the ball actually goes *in*.
 
-*(photo coming soon)*
-
 ## Parts
 
 | Part | Notes |
