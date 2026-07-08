@@ -24,13 +24,13 @@ and an eval can run unattended forever.
 [`stl/button.stl`](stl/button.stl) is the full assembly; [`stl/parts/`](stl/parts/)
 has the individual pieces:
 
-| Part | Size (mm) | What it is |
-|---|---|---|
-| [`parts/base.stl`](stl/parts/base.stl) | 111 × 87 × 72 | the rig's base |
-| [`parts/base_servo_holder.stl`](stl/parts/base_servo_holder.stl) | 48 × 80 × 31 | shoulder-servo holder that mounts into the base |
-| [`parts/lower_arm.stl`](stl/parts/lower_arm.stl) | 36 × 179 × 79 | link 1 (shoulder → elbow) |
-| [`parts/upper_arm.stl`](stl/parts/upper_arm.stl) | 39 × 156 × 79 | link 2 (elbow → button) |
-| [`parts/mounting_plate.stl`](stl/parts/mounting_plate.stl) | 51 × 8 × 42 | mount for the USB key at the end effector |
+| Part | What it is |
+|---|---|
+| [`parts/base.stl`](stl/parts/base.stl) | the rig's base |
+| [`parts/base_servo_holder.stl`](stl/parts/base_servo_holder.stl) | shoulder-servo holder that mounts into the base |
+| [`parts/lower_arm.stl`](stl/parts/lower_arm.stl) | link 1 (shoulder → elbow) |
+| [`parts/upper_arm.stl`](stl/parts/upper_arm.stl) | link 2 (elbow → button) |
+| [`parts/mounting_plate.stl`](stl/parts/mounting_plate.stl) | mount for the USB key at the end effector |
 
 ## Setup
 

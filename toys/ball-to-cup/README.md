@@ -24,11 +24,11 @@ attempts if you want a distribution rather than a single layout.
 [`stl/cup.stl`](stl/cup.stl) is the full assembly; [`stl/parts/`](stl/parts/)
 has the individual pieces:
 
-| Part | Size (mm) | What it is |
-|---|---|---|
-| [`parts/cup.stl`](stl/parts/cup.stl) | 135 × 100 × 125 | the cup itself — print in black (or make it matte black) so the container mask segments cleanly |
-| [`parts/plate.stl`](stl/parts/plate.stl) | 200 × 225 × 14 | base plate that anchors the cup in the workspace |
-| [`parts/alignment.stl`](stl/parts/alignment.stl) | 210 × 80 × 15 | alignment piece that registers the plate at a repeatable spot (same part as the shelf toy's) |
+| Part | What it is |
+|---|---|
+| [`parts/cup.stl`](stl/parts/cup.stl) | the cup itself — print in black (or make it matte black) so the container mask segments cleanly |
+| [`parts/plate.stl`](stl/parts/plate.stl) | base plate that anchors the cup in the workspace |
+| [`parts/alignment.stl`](stl/parts/alignment.stl) | alignment piece that registers the plate at a repeatable spot (same part as the shelf toy's) |
 
 ## Success detection
 

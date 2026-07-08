@@ -17,13 +17,13 @@ any arm that can reach a ~30 cm tabletop workspace can run them.
 | Toy | Task | Success signal | Auto-reset |
 |---|---|---|---|
 | [Ball to cup](toys/ball-to-cup/) | Drop a light-blue ball into a tall black cylinder | Vision: ball mask ends up inside the cylinder mask | Not yet (arm homes; ball stays in cup) |
-| [Sock on shelf](toys/shelf-sock/) | Place a red sock on a small shelf | Vision: sock mask sits above the shelf line for 5+ frames | Yes — the shelf flips and dumps the sock back |
+| [Shelf](toys/shelf/) | Place an object on a small shelf | Vision: object mask sits above the shelf line for 5+ frames | Yes — the shelf flips and dumps the object back |
 | [Press the button](toys/press-button/) | Reach out and press a red button | Electrical: the button is a USB key that types `1` when pressed | Yes — a 2-servo rig slides the button to a new random spot after every press |
 
 They form a difficulty ladder for success detection, too:
 
 1. **Press the button** needs no vision at all — success is a keystroke.
-2. **Sock on shelf** needs one segmentation mask and a line test.
+2. **Shelf** needs one segmentation mask and a line test.
 3. **Ball to cup** needs two masks and an overlap test.
 
 ## What "success detection" means here
