@@ -14,17 +14,19 @@ any arm that can reach a ~30 cm tabletop workspace can run them.
 
 ## The toys
 
-| Toy | Task | Success signal | Auto-reset |
-|---|---|---|---|
-| [Ball to cup](toys/ball-to-cup/) | Drop a light-blue ball into a tall black cylinder | Vision: ball mask ends up inside the cylinder mask | Not yet (arm homes; ball stays in cup) |
-| [Shelf](toys/shelf/) | Place an object on a small shelf | Vision: object mask sits above the shelf line for 5+ frames | Yes — the shelf flips and dumps the object back |
-| [Press the button](toys/press-button/) | Reach out and press a red button | Electrical: the button is a USB key that types `1` when pressed | Yes — a 2-servo rig slides the button to a new random spot after every press |
+| Toy | Task | Success signal | Auto-reset | Demo |
+|---|---|---|---|---|
+| [Ball to cup](toys/ball-to-cup/) | Drop a light-blue ball into a tall black cylinder | Vision: ball mask intersects the cup mask, then comes to rest | Yes — the cup is shaped to roll the ball back out, to a random spot | [video](https://youtu.be/Tn7ImfhEiuk) |
+| [Shelf](toys/shelf/) | Place an object on a small shelf | Vision: object mask sits above the shelf line for 5+ frames | Yes — the shelf flips and dumps the object back | [video](https://youtu.be/QhoUHm92rZE) |
+| [Press the button](toys/press-button/) | Reach out and press a red button | Electrical: the button is a USB key that types `1` when pressed | Yes — a 2-servo rig slides the button to a new random spot after every press | [video](https://youtu.be/fBEsYfOkB0k) |
 
 They form a difficulty ladder for success detection, too:
 
 1. **Press the button** needs no vision at all — success is a keystroke.
 2. **Shelf** needs one segmentation mask and a line test.
-3. **Ball to cup** needs two masks and an overlap test.
+3. **Ball to cup** needs two video-tracked masks and an intersect-then-stop
+   test (the ball rolls, so per-frame re-prompting is too slow — use a video
+   tracker like SAM3-video seeded with the masks).
 
 ## What "success detection" means here
 

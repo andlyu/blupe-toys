@@ -2,6 +2,9 @@
 
 **Task:** "Place the object on the shelf in front."
 
+▶ **[Watch it run](https://youtu.be/QhoUHm92rZE)** — in the video the pickup is
+teleoperated and the reset runs autonomously.
+
 The robot picks an object off the table and places it on a small raised shelf.
 Grasping plus a placement above the table plane — and the rig resets *itself*:
 the shelf is hinged, so after every attempt a recorded flip motion tips the
@@ -10,7 +13,8 @@ object back onto the table.
 Any graspable object works — pick one and set the success prompt to match. In
 our example runs the object was a rolled red sock: deformable, so it's
 forgiving to grasp but hard to place tidily, and saturated red segments
-cleanly.
+cleanly. The same rig also extends past pick-and-place: sorting, stacking, or
+even insertion can be tested with whatever you put on the table.
 
 ## Parts
 

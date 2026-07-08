@@ -3,21 +3,23 @@
 **Task:** "Move to the light blue ball, grab it, and move it to the tall black
 cylinder."
 
-The robot has to locate a small light-blue ball on the table, grasp it, carry
-it, and release it into a tall black cylinder (the "cup"). It exercises the
-full pick-and-place loop: visual search, a precise grasp on a curved object,
-and a placement that only counts when the ball actually goes *in*.
+▶ **[Watch it run](https://youtu.be/Tn7ImfhEiuk)**
+
+The robot locates a small light-blue ball on the table, grasps it, carries it,
+and drops it into a black cup. The trick is in the cup: it's modified so the
+ball rolls back out onto the plate. That makes the environment **self-resetting
+by mechanics alone** — and because the ball isn't perfectly round, it comes to
+rest somewhere new after every attempt, so you get scene randomization for
+free.
 
 ## Parts
 
 | Part | Notes |
 |---|---|
-| 1× light-blue ball, ~4 cm | Soft/squishy grips far better than hard plastic. Matte light blue segments cleanly and is rare enough in a workspace not to false-positive. |
-| 1× tall black cylinder, ~8–10 cm ⌀ | A matte black cup, tumbler, or a piece of black-taped PVC/cardboard tube. Tall enough that the ball can't bounce out, open on top. Matte black gives a crisp mask. |
+| 1× light-blue ball, ~4 cm | Soft/squishy grips far better than hard plastic. Matte light blue segments cleanly and is rare enough in a workspace not to false-positive. A slightly imperfect ball is a feature here: it rolls out to a different spot every time. |
+| 1× modified cup | Printed below — open on top, shaped so a dropped ball rolls back out onto the plate. Fix it firmly to the table: the arm will hit it eventually. |
 
-Placement: ball and cylinder both inside the arm's reach, far enough apart
-that the carry is nontrivial (we use ~15–20 cm). Vary both positions between
-attempts if you want a distribution rather than a single layout.
+Placement: cup anchored on its plate, ball starting anywhere inside reach.
 
 ## Printed parts
 
@@ -32,22 +34,19 @@ has the individual pieces:
 
 ## Success detection
 
-Scored from the fixed front camera with two segmentation prompts:
+Tracked from the fixed front camera. This toy needs **video mask tracking**
+(we use SAM3-video seeded with pre-determined masks for the ball and the cup)
+— re-prompting a per-image segmenter every frame was too slow to catch the
+ball rolling through.
 
-- **Object prompt:** `light blue object`
-- **Container prompt:** `black cylinder inside`
-
-Success = the ball's mask **ends up overlapping** the container mask — i.e. the
-ball disappears into the cylinder's interior region and stays there. A ball
-merely held above or brushing past the rim doesn't count; the overlap has to be
-where the ball comes to rest.
+Success = the ball's mask **intersects the cup's mask and then comes to
+rest**: the ball went in, rolled back out, and stopped. A ball merely carried
+past the cup doesn't count, and neither does one still rolling.
 
 **Failure:** 60 seconds with no success.
 
 ## Reset
 
-No automated reset yet — after a success the ball is inside the cup, so a human
-(or a scripted arm motion, if you record one) has to return it to the table.
-Between attempts the arm returns to its home pose. This is the one toy of the
-three that still needs a human in the loop for long unattended runs; a
-teleop-recorded "dump the cup and place the ball" replay is the planned fix.
+Self-resetting — the cup returns the ball to the plate at a semi-random spot,
+and the arm just homes between attempts. No recorded trajectories, no human in
+the loop.
