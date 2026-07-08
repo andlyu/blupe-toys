@@ -27,6 +27,59 @@ and an eval can run unattended forever.
 links, and the key mount), ready to print. Individual component STLs will be
 added.
 
+## Setup
+
+Everything runs from [`button_rig.py`](button_rig.py) in this folder.
+
+```bash
+pip install feetech-servo-sdk pynput
+export BUTTON_RIG_PORT=/dev/cu.usbserial-XXXX   # your driver board's serial device
+                                                # (Linux: /dev/ttyUSB0 or /dev/ttyACM0)
+```
+
+**0. Assign servo IDs** (once, fresh servos all ship as ID 1). With only the
+shoulder servo plugged into the board, then only the elbow:
+
+```bash
+python3 button_rig.py setup-id --id 1   # shoulder alone on the bus
+python3 button_rig.py setup-id --id 2   # elbow alone on the bus
+```
+
+**A. Scan** — connect both servos and confirm the bus sees them:
+
+```bash
+python3 button_rig.py scan
+# baud=1000000 id=1 model=...
+# baud=1000000 id=2 model=...
+```
+
+If nothing shows up, check the 12 V supply and the 3-pin servo cable.
+
+**B. Calibrate** — an interactive pass with torque off; you move the arm by
+hand through four prompts (middle pose, two direction checks, then a sweep of
+both joints to their limits). Writes `config/calibration.json`.
+
+```bash
+python3 button_rig.py calibrate
+python3 button_rig.py read      # verify: move the arm by hand, watch XY track
+```
+
+**C. Draw the box** — open the web UI and drag a rectangle on the workspace
+canvas to define where the button is allowed to go. The UI shows the reachable
+annulus and the live arm pose; corners that leave the workspace are rejected.
+You can also capture corners physically: torque off, hand-place the button at
+each corner, click the corner buttons. Saved to `config/grid.json`.
+
+```bash
+python3 button_rig.py ui        # http://localhost:8095
+```
+
+Then flip on **Toy mode** in the UI: every press of the button (and every
+60 s timeout without one) slides it to a new random spot in the box, and each
+attempt is logged to `logs/*.jsonl`. Test the keystroke path first with
+`python3 button_rig.py listen` — on macOS the terminal needs Input Monitoring
+permission (System Settings → Privacy & Security).
+
 ## How the rig works
 
 The two servos form a planar SCARA arm with the button at the end effector.
@@ -61,7 +114,8 @@ button-pressing job:
 
 ## Software
 
-The rig driver (scan/calibrate/goto/poses/listen subcommands, FK/IK, the
-press-listener) is a single Python file in our research stack and will be
-published here. Until then the spec above is everything you need to reimplement
-it: two bus servos, two-link IK, a corner-calibrated grid, and a USB key.
+[`button_rig.py`](button_rig.py) is the whole driver: scan / setup-id /
+calibrate / read / goto / listen subcommands, the two-link FK/IK, the press
+listener, and the web UI with toy mode. It only needs `feetech-servo-sdk` and
+`pynput`. Machine-local state (calibration, the box) lands in `config/` and
+attempt logs in `logs/`, both untracked.

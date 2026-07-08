@@ -1,1 +1,4 @@
 .DS_Store
+toys/press-button/config/
+toys/press-button/logs/
+__pycache__/
