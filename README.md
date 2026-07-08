@@ -38,4 +38,4 @@ run them.
 We expect to extend this into a full auto-evals platform, and we'd love
 feedback on what would be the most useful way to take it — open an
 [issue](https://github.com/andlyu/blupe-toys/issues) and tell us what you'd
-want it to do.
+want it to do, or feel free to reach out directly.
