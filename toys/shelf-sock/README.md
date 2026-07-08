@@ -21,8 +21,16 @@ table inside reach.
 
 ## Printed parts
 
-[`stl/shelf.stl`](stl/shelf.stl) — the full hinged-shelf assembly, ready to
-print. Individual component STLs will be added.
+[`stl/shelf.stl`](stl/shelf.stl) is the full assembly; [`stl/parts/`](stl/parts/)
+has the individual pieces:
+
+| Part | Size (mm) | What it is |
+|---|---|---|
+| [`parts/shelf.stl`](stl/parts/shelf.stl) | 200 × 135 × 170 | the main shelf body with the hinge |
+| [`parts/shelf_left.stl`](stl/parts/shelf_left.stl) / [`parts/shelf_right.stl`](stl/parts/shelf_right.stl) | ~100 × 92 × 7 each | the two halves of the tipping platform |
+| [`parts/handle.stl`](stl/parts/handle.stl) | 25 × 39 × 39 | handle the arm pushes to flip the shelf |
+| [`parts/plate.stl`](stl/parts/plate.stl) | 200 × 225 × 14 | base plate that anchors the shelf in the workspace |
+| [`parts/alignment.stl`](stl/parts/alignment.stl) | 210 × 80 × 15 | alignment piece that registers the plate at a repeatable spot (same part as the cup toy's) |
 
 ## Success detection
 
