@@ -10,14 +10,16 @@ and an eval can run unattended forever.
 
 *(photo coming soon)*
 
-## Parts
+## Bill of materials
 
-| Part | ~Cost | Notes |
-|---|---|---|
-| 1× SayoDevice 1×1P key | ~$10 | A single-key USB "keyboard". When pressed it types a character (`1`) on the host. Any programmable USB macro key works. |
-| 2× Feetech STS3215 servos | ~$15 ea | The same serial-bus servos the SO-101 uses, so they can share the follower arm's bus/controller board — just give them IDs outside the arm's 1–6. |
-| 2 links + a base | printed/scrap | A planar two-link arm: shoulder→elbow 162 mm, elbow→button 150 mm in our build. Exact lengths don't matter; they're calibration inputs. |
-| Red button cap | — | Make the key look like "the red button" from the front camera. |
+| Qty | Part | Link | Notes |
+|---|---|---|---|
+| 2 | Feetech STS3215 serial bus servo | [Feetech](https://www.feetechrc.com/en/2020-05-13_56655.html) / widely resold | Shoulder + elbow of the SCARA rig. Same servo the SO-101 uses. |
+| 1 | Waveshare ST/SC Serial Bus Servo Driver Board | [Amazon B0CJBKQ8LJ](https://www.amazon.com/dp/B0CJBKQ8LJ) | USB↔serial-bus adapter that powers and drives both servos. If you're already running an SO-101, you can instead hang the rig's servos off the arm's existing bus (give them IDs outside the arm's 1–6). |
+| 1 | Single-key programmable USB keypad | [Amazon B0D7GXV5LD](https://www.amazon.com/dp/B0D7GXV5LD) | The button itself — a one-key USB "keyboard". Program it to type `1`; that keystroke is the success signal. Any programmable macro key (e.g. SayoDevice 1×1P) works. |
+| 1 | 9–12 V DC power supply, 5.5×2.1 mm barrel | — | Powers the driver board and servos (skip if sharing the SO-101 bus). |
+| 1 | Printed parts: base, two links, key mount | [`stl/button.stl`](stl/button.stl) | Shoulder→elbow 162 mm, elbow→button 150 mm in our build. Exact lengths don't matter; they're calibration inputs. |
+| 1 | Red button cap | — | Make the key look like "the red button" from the front camera. Paint or a printed cap both work. |
 
 ## Printed parts
 
