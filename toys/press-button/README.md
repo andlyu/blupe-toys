@@ -1,5 +1,9 @@
 # Press the button
 
+**TLDR:** possibly the simplest toy — reach and press a button that can be in
+different locations. It can be a button, or extend to other physical pressing
+and even insertion tasks, reaching use cases like datacenter cabling.
+
 **Task:** "Reach to the red button and press it."
 
 ▶ **[Watch it run](https://youtu.be/fBEsYfOkB0k)**
@@ -8,8 +12,7 @@ The simplest task, with the most interesting rig. The button is a real USB
 keyboard key, so success is an electrical event — no vision, no ambiguity, no
 tuning. And the button never stays put: a small 2-servo SCARA arm slides it to
 a new random spot after every press, so the policy can't memorize one position
-and an eval can run unattended forever. The same rig extends to plugging and
-unplugging tasks — think datacenter cabling.
+and an eval can run unattended forever.
 
 ## Bill of materials
 
