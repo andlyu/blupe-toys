@@ -19,6 +19,11 @@ flip motion tips the sock back onto the table.
 Placement: shelf at the front of the workspace, sock starting anywhere on the
 table inside reach.
 
+## Printed parts
+
+[`stl/shelf.stl`](stl/shelf.stl) — the full hinged-shelf assembly, ready to
+print. Individual component STLs will be added.
+
 ## Success detection
 
 Scored from the fixed front camera with one segmentation prompt:

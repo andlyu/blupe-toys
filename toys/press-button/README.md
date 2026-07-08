@@ -19,6 +19,12 @@ and an eval can run unattended forever.
 | 2 links + a base | printed/scrap | A planar two-link arm: shoulder→elbow 162 mm, elbow→button 150 mm in our build. Exact lengths don't matter; they're calibration inputs. |
 | Red button cap | — | Make the key look like "the red button" from the front camera. |
 
+## Printed parts
+
+[`stl/button.stl`](stl/button.stl) — the full button-rig assembly (base, both
+links, and the key mount), ready to print. Individual component STLs will be
+added.
+
 ## How the rig works
 
 The two servos form a planar SCARA arm with the button at the end effector.

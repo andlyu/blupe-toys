@@ -21,6 +21,12 @@ Placement: ball and cylinder both inside the arm's reach, far enough apart
 that the carry is nontrivial (we use ~15–20 cm). Vary both positions between
 attempts if you want a distribution rather than a single layout.
 
+## Printed parts
+
+[`stl/cup.stl`](stl/cup.stl) — the full cup assembly, ready to print. Print in
+black (or paint/tape it matte black) so the container mask segments cleanly.
+Individual component STLs will be added.
+
 ## Success detection
 
 Scored from the fixed front camera with two segmentation prompts:
