@@ -37,7 +37,7 @@ has the individual pieces:
 | [`parts/shelf_left.stl`](stl/parts/shelf_left.stl) / [`parts/shelf_right.stl`](stl/parts/shelf_right.stl) | the two halves of the tipping platform |
 | [`parts/handle.stl`](stl/parts/handle.stl) | handle the arm pushes to flip the shelf |
 | [`parts/plate.stl`](stl/parts/plate.stl) | base plate that anchors the shelf in the workspace |
-| [`parts/alignment.stl`](stl/parts/alignment.stl) | alignment piece that registers the plate at a repeatable spot (same part as the cup toy's) |
+| [`parts/alignment.stl`](stl/parts/alignment.stl) | alignment piece that registers the plate at a repeatable spot relative to an SO-101 arm (same part as the cup toy's) |
 
 ## Success detection
 

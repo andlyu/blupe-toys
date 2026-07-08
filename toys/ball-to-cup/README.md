@@ -34,7 +34,7 @@ has the individual pieces:
 |---|---|
 | [`parts/cup.stl`](stl/parts/cup.stl) | the cup itself — print in black (or make it matte black) so the container mask segments cleanly |
 | [`parts/plate.stl`](stl/parts/plate.stl) | base plate that anchors the cup in the workspace |
-| [`parts/alignment.stl`](stl/parts/alignment.stl) | alignment piece that registers the plate at a repeatable spot (same part as the shelf toy's) |
+| [`parts/alignment.stl`](stl/parts/alignment.stl) | alignment piece that registers the plate at a repeatable spot relative to an SO-101 arm (same part as the shelf toy's) |
 
 ## Success detection
 
