@@ -1,5 +1,10 @@
 # Shelf
 
+**TLDR:** an interesting use case for how a replayed trajectory can reset a
+task. Once an object reaches the shelf, all the reset needs to do is hit the
+lever. The task lends itself to more complex variants — shelving, stacking,
+or even construction, if the parts come apart on their own when they fall.
+
 **Task:** "Place the object on the shelf in front."
 
 ▶ **[Watch it run](https://youtu.be/QhoUHm92rZE)** — in the video the pickup is
