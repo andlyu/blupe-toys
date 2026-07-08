@@ -1,6 +1,7 @@
 # blupe-toys
 
 Self-resetting environments — toys your robots will play with for hours.
+Blog post: [blupe.io/autoevals.html](https://blupe.io/autoevals.html)
 
 It's underappreciated how close to perfect the performance of a robot needs to
 be to be profitable, and getting there takes an enormous amount of

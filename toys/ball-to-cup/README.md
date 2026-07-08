@@ -1,22 +1,26 @@
 # Ball to cup
 
+**TLDR:** an object that can roll is moved into a cup — and it rolls back
+out, resetting itself.
+
 **Task:** "Move to the light blue ball, grab it, and move it to the tall black
 cylinder."
 
 ▶ **[Watch it run](https://youtu.be/Tn7ImfhEiuk)**
 
-The robot locates a small light-blue ball on the table, grasps it, carries it,
-and drops it into a black cup. The trick is in the cup: it's modified so the
-ball rolls back out onto the plate. That makes the environment **self-resetting
-by mechanics alone** — and because the ball isn't perfectly round, it comes to
+The robot locates the ball on the table, grasps it, carries it, and drops it
+into a black cup. The trick is in the cup: it's modified so the ball rolls
+back out onto the plate. That makes the environment **self-resetting by
+mechanics alone** — and because the ball isn't perfectly round, it comes to
 rest somewhere new after every attempt, so you get scene randomization for
-free.
+free. For our ball we made a rubber band ball and put it inside a light-blue
+balloon.
 
 ## Parts
 
 | Part | Notes |
 |---|---|
-| 1× light-blue ball, ~4 cm | Soft/squishy grips far better than hard plastic. Matte light blue segments cleanly and is rare enough in a workspace not to false-positive. A slightly imperfect ball is a feature here: it rolls out to a different spot every time. |
+| 1× rolling object | Anything works as long as it rolls and is non-deterministic — it shouldn't settle in the same spot twice. Ours is a rubber band ball inside a light-blue balloon: grippy, slightly irregular, and the balloon gives a saturated, workspace-unique color to segment. |
 | 1× modified cup | Printed below — open on top, shaped so a dropped ball rolls back out onto the plate. Fix it firmly to the table: the arm will hit it eventually. |
 
 Placement: cup anchored on its plate, ball starting anywhere inside reach.
@@ -34,10 +38,11 @@ has the individual pieces:
 
 ## Success detection
 
-Tracked from the fixed front camera. This toy needs **video mask tracking**
-(we use SAM3-video seeded with pre-determined masks for the ball and the cup)
-— re-prompting a per-image segmenter every frame was too slow to catch the
-ball rolling through.
+Evaluations run SAM3 on the fixed front camera, tracking the ball's location
+throughout the episode, with the cup tracked alongside it to handle the
+overlap between the two. Use the **video** variant (SAM3-video) seeded with
+pre-determined masks — re-prompting a per-image segmenter every frame was too
+slow to catch the ball rolling through.
 
 Success = the ball's mask **intersects the cup's mask and then comes to
 rest**: the ball went in, rolled back out, and stopped. A ball merely carried
