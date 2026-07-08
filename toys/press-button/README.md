@@ -37,7 +37,10 @@ has the individual pieces:
 
 ## Setup
 
-Everything runs from [`button_rig.py`](button_rig.py) in this folder.
+Everything runs from [`button_rig.py`](button_rig.py) in this folder. If
+you've set up an SO-101 this will feel familiar: identify the motors, then
+calibrate by moving the joints to their max positions. On top of that, a web
+UI lets you limit the button's motions to a box region.
 
 ```bash
 pip install feetech-servo-sdk pynput
