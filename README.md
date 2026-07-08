@@ -32,3 +32,10 @@ Each toy's folder has the full walkthrough. The toys were built around the
 [SO-101](https://github.com/TheRobotStudio/SO-ARM100) arm, but nothing about
 them is arm-specific: any arm that can reach a ~30 cm tabletop workspace can
 run them.
+
+## Where this is going
+
+We expect to extend this into a full auto-evals platform, and we'd love
+feedback on what would be the most useful way to take it — open an
+[issue](https://github.com/andlyu/blupe-toys/issues) and tell us what you'd
+want it to do.
