@@ -87,3 +87,18 @@ means the state and action values were converted to the MolmoAct2 v2.1
 SO100/SO101 joint convention; these are converted copies, not additional
 collection rounds. The public source-format datasets are linked for batches 4
 and 5 because their `_v21` conversions are not currently public.
+
+## Non-DAgger ball-play datasets
+
+These longer ball-play recordings are separate from the intervention batches
+above. Together they contain 17 episodes and 114,800 frames (about 64 minutes
+at 30 fps):
+
+| Dataset | Episodes | Frames |
+|---|---:|---:|
+| [`play_with_blue_ball_20260711_020657`](https://huggingface.co/datasets/andlyu/play_with_blue_ball_20260711_020657) | 5 | 8,857 |
+| [`play_with_blue_ball_20260711_022527`](https://huggingface.co/datasets/andlyu/play_with_blue_ball_20260711_022527) | 6 | 53,211 |
+| [`play_with_blue_ball_20260711_031803`](https://huggingface.co/datasets/andlyu/play_with_blue_ball_20260711_031803) | 6 | 52,732 |
+
+Each dataset contains six joint-state values, six corresponding actions, and
+front, side, and wrist video.
