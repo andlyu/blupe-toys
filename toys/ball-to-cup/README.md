@@ -70,8 +70,10 @@ Hugging Face:
 
 > **Use these datasets with extreme caution.** They are older, messier
 > artifacts that mix earlier Hugging Face/LeRobot dataset formats with
-> convention-converted copies. Inspect and clean the episode boundaries,
-> schema, camera keys, and joint conventions before using them for training.
+> convention-converted copies. This format and convention mix was used to
+> align the data with the original MolmoAct setup. Inspect and clean the
+> episode boundaries, schema, camera keys, and joint conventions before using
+> them for training.
 
 | Batch | Dataset | Episodes |
 |---|---|---:|
