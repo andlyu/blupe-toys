@@ -65,8 +65,13 @@ noticed in rollout replays. The resulting batches were aggregated with the
 earlier data before each round of fine-tuning — a DAgger-style loop because
 the new data focuses on states visited by the current policy.
 
-The seven curated intervention batches are hosted as LeRobot datasets on
+The five curated intervention batches are hosted as LeRobot datasets on
 Hugging Face:
+
+> **Use these datasets with extreme caution.** They are older, messier
+> artifacts that mix earlier Hugging Face/LeRobot dataset formats with
+> convention-converted copies. Inspect and clean the episode boundaries,
+> schema, camera keys, and joint conventions before using them for training.
 
 | Batch | Dataset | Episodes |
 |---|---|---:|
@@ -75,10 +80,8 @@ Hugging Face:
 | 3 | [`so101-ball-cup-intervene-edited_3_v21`](https://huggingface.co/datasets/andlyu/so101-ball-cup-intervene-edited_3_v21) | 19 |
 | 4 | [`so101-ball-cup-intervene-edited_4`](https://huggingface.co/datasets/andlyu/so101-ball-cup-intervene-edited_4) | 53 |
 | 5 | [`so101-ball-cup-intervene-edited_5`](https://huggingface.co/datasets/andlyu/so101-ball-cup-intervene-edited_5) | 39 |
-| 6 | [`so101-ball-cup-intervene-edited_6_v21`](https://huggingface.co/datasets/andlyu/so101-ball-cup-intervene-edited_6_v21) | 18 |
-| 7 | [`so101-ball-cup-intervene-edited_7_v21`](https://huggingface.co/datasets/andlyu/so101-ball-cup-intervene-edited_7_v21) | 25 |
 
-Together they contain 188 episodes. Our training split uses 160 episodes and
+Together they contain 145 episodes. Our training split uses 125 episodes and
 holds out the final four episodes from every batch for validation.
 
 Each episode contains front and wrist video at 30 fps, six SO-101 joint-state
@@ -93,6 +96,9 @@ and 5 because their `_v21` conversions are not currently public.
 These longer ball-play recordings are separate from the intervention batches
 above. Together they contain 17 episodes and 114,800 frames (about 64 minutes
 at 30 fps):
+
+> **Camera note:** the wrist and camera streams are swapped in these datasets.
+> This labeling issue does not affect training.
 
 | Dataset | Episodes | Frames |
 |---|---:|---:|
